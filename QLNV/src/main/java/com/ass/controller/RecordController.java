@@ -23,10 +23,12 @@ public class RecordController {
     private RecordService recordsService;
     @Autowired
     private StaffsService staffsService;
+
     @ModelAttribute("staffs")
     public Iterable<Staffs> staffs(){
         return staffsService.findAll();
     }
+
     @GetMapping("/records")
     public ModelAndView listRecords(){
         Iterable<Records> records = recordsService.findAll();

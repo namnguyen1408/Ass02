@@ -6,7 +6,7 @@
 </head>
 <style>
     footer{margin: 10px 0;}
-
+    h2{text-align: center}
     #customers {
         font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
         border-collapse: collapse;
@@ -30,7 +30,7 @@
         color: white;
     }
 
-    input[type=text],input[type=email],#staff{
+    input[type=text],input[type=email],input[type=date],#staff{
         width: 100%;
         padding: 10px 0px;
         margin: 8px 0;
@@ -144,7 +144,7 @@
                 <!--/.navbar-->
                 <br><br><br><br><p></p><br><br>
                 <!--footer-->
-                <h3>Remove Staff!!!</h3>
+                <h2>Remove Staff!!!</h2>
                 <br><br>
                 <p>
                     <a href="/staffs" id="list">Back to Staffs list</a>
@@ -154,35 +154,35 @@
         <input type="hidden" th:field="*{id}"/>
         <div>
             <label>Name: </label>
-            <input type="text" th:field="*{name}"/>
+            <input type="text" disabled="disabled" th:field="*{name}"/>
         </div>
         <div>
             <label>Address: </label>
-            <input type="text" th:field="*{adress}"/>
+            <input type="text" disabled="disabled" th:field="*{adress}"/>
         </div>
         <div>
             <label>Birthday: </label>
-            <input type="text" th:field="*{Birthday}"/>
+            <input type="text" disabled="disabled" th:field="*{Birthday}"/>
         </div>
         <div>
             <label>PhoTo: </label>
-            <input type="text" th:field="*{photo}"/>
+            <input type="text" disabled="disabled" th:field="*{photo}"/>
         </div>
         <div>
             <label>Email: </label>
-            <input type="text" th:field="*{Email}"/>
+            <input type="text" disabled="disabled" th:field="*{Email}"/>
         </div>
         <div>
             <label>Phone: </label>
-            <input type="text" th:field="*{Phone}"/>
+            <input type="text" disabled="disabled" th:field="*{Phone}"/>
         </div>
         <div>
             <label>Salary: </label>
-            <input type="text" th:field="*{salary}"/>
+            <input type="text" disabled="disabled" th:field="*{salary}"/>
         </div>
         <div>
             <label>Notes: </label>
-            <input type="text" th:field="*{Notes}"/>
+            <input type="text" disabled="disabled" th:field="*{Notes}"/>
         </div>
         <div>
             <label>Depart name: </label>
@@ -193,6 +193,6 @@
         <input type="submit" value="Remove">
     </form>
 </div>
-<footer th:replace="mylayout :: footer"></footer>
+<footer></footer>
 </body>
 </html>

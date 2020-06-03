@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <style>
+    h2{text-align: center}
     footer{margin: 10px 0;}
 
     #customers {
@@ -132,11 +133,11 @@
                 <!--/.navbar-->
                 <br><br><br><br><p></p><br><br>
                 <!--footer-->
-                <h3>Update Depart</h3>
+                <h2>Update Depart</h2>
                 <br><br>
                 <p>
                     <a href="/departs" id="list">Back to Departs list</a>
-                </p>
+                </p><br><br>
 <th:block th:if="${message}">
     <p th:text="${message}"></p>
 </th:block>
@@ -151,6 +152,6 @@
         <input type="submit" value="Modify">
     </form>
 </div>
-<footer th:replace="mylayout :: footer"></footer>
+<footer></footer>
 </body>
 </html>

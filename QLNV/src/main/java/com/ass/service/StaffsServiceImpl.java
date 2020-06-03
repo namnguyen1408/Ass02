@@ -5,6 +5,7 @@ import com.ass.model.Staffs;
 import com.ass.responsitory.StaffsResponsitory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
 import java.util.Optional;
 
 public class StaffsServiceImpl implements StaffsService{
@@ -21,6 +22,7 @@ public class StaffsServiceImpl implements StaffsService{
         return staffsResponsitory.findById(id);
     }
 
+
     @Override
     public void save(Staffs staffs) {
         staffsResponsitory.save(staffs);
@@ -31,6 +33,9 @@ public class StaffsServiceImpl implements StaffsService{
         staffsResponsitory.deleteById(id);
     }
 
+    public List<Staffs> search(String keyword) {
+        return staffsResponsitory.search(keyword);
+    }
 //    @Override
 //    public Iterable<Staffs> findAllByDepart(Depart depart) {
 //        return staffsResponsitory.findAllByDepart(depart);

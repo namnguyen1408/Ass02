@@ -8,12 +8,10 @@ import com.ass.service.StaffsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -22,7 +20,8 @@ public class StaffsController {
     private StaffsService staffsService;
     @Autowired
     private DepartService departService;
-
+    @Autowired
+    private StaffsServiceImpl  im;
     @ModelAttribute("departs")
     public Iterable<Depart> departs(){
         return departService.findAll();
@@ -63,14 +62,13 @@ public class StaffsController {
             ModelAndView modelAndView = new ModelAndView("/error.404");
             return modelAndView;
         }
-
     }
     @PostMapping("/edit-staffs")
     public ModelAndView updateStaffs(@ModelAttribute("province") Staffs staffs){
         staffsService.save(staffs);
         ModelAndView modelAndView = new ModelAndView("/staffs/edit");
         modelAndView.addObject("staffs", staffs);
-        modelAndView.addObject("message", "staffs updated successfully");
+        modelAndView.addObject("message", "Update successfull!!!");
         return modelAndView;
     }
     @GetMapping("/delete-staffs/{id}")
@@ -92,4 +90,15 @@ public class StaffsController {
         staffsService.remove(staffs.getId());
         return "redirect:staffs";
     }
+
+    @GetMapping("/search")
+    public ModelAndView search(@RequestParam String keyword) {
+        List<Staffs> result = im.search(keyword);
+        ModelAndView mav = new ModelAndView("/staffs/result");
+        mav.addObject("/staffs/result", result);
+        return mav;
+    }
+
+
+
 }

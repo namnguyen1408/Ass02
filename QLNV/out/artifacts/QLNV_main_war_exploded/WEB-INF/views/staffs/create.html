@@ -6,7 +6,7 @@
 </head>
 <style>
     footer{margin: 10px 0;}
-
+    h2{text-align: center}
     #customers {
         font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
         border-collapse: collapse;
@@ -30,7 +30,7 @@
         color: white;
     }
 
-    #staff,input[type=text],input[type=email]{
+    #staff,input[type=text],input[type=email],input[type=date]{
         width: 100%;
         padding: 10px 0px;
         margin: 8px 0;
@@ -132,11 +132,12 @@
                 <!--/.navbar-->
                 <br><br><br><br><p></p><br><br>
                 <!--footer-->
-                <h3>Add Customer</h3>
+                <h2>Add Staff</h2>
                 <br><br>
                 <p>
                     <a href="/staffs" id="list">Back to Staffs list</a>
                 </p>
+                <br><br>
                 <div class="notify">
                     <th:block th:if="${message}">
                         <p th:text="${message}"></p>
@@ -155,7 +156,7 @@
                         </div>
                         <div>
                             <label>Birthday: </label>
-                            <input type="text" th:field="*{Birthday}"/>
+                            <input type="date" th:field="*{Birthday}"/>
                         </div>
                         <div>
                             <label>PhoTo: </label>
@@ -186,6 +187,6 @@
                         <input type="submit" value="Save"></input>
                     </form>
                 </div>
-                <footer th:replace="mylayout :: footer"></footer>
+                <footer></footer>
 </body>
 </html>

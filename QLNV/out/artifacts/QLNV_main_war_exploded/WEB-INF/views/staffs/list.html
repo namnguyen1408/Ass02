@@ -6,7 +6,7 @@
 </head>
 <style>
     footer{margin: 10px 0;}
-
+    h2{text-align: center}
     #customers {
         font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
         border-collapse: collapse;
@@ -149,11 +149,15 @@
                 <!--/.navbar-->
                 <br><br><br><br><p></p><br><br>
                 <!--footer-->
-                <h3>Staffs List</h3>
+                <h2>Staffs List</h2>
                 <br><br>
                 <p>
-                    <a href="/create-staffs" id="list">Creat Staff</a>
+                    <a href="/create-staffs" id="list">Create Staff</a>
                 </p> <br><br><br>
+                <form method="get" action="search">
+                    <input type="text" name="keyword" /> &nbsp;
+                    <input type="submit" value="Search" />
+                </form>
 <table id = "customers">
     <thead>
     <tr>
@@ -189,6 +193,6 @@
     </th:block>
     </tbody>
 </table>
-<footer th:replace="mylayout :: footer"></footer>
+<footer></footer>
 </body>
 </html>

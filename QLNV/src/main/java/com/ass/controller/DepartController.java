@@ -17,6 +17,7 @@ import java.util.Optional;
 
 @Controller
 public class DepartController {
+    //tiêm phụ thuộc đối tượng DepartService đc khai báo ở Applicationconfig(cơ chế DI)
     @Autowired
     private StaffsService staffsService;
     @Autowired

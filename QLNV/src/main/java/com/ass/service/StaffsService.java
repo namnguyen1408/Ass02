@@ -6,6 +6,7 @@ import com.ass.model.Staffs;
 import java.util.Optional;
 
 public interface StaffsService {
+
     Iterable<Staffs> findAll();
 
     Optional<Staffs> findById(Long id);

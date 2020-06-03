@@ -6,7 +6,7 @@
 </head>
 <style>
     footer{margin: 10px 0;}
-
+    h2{text-align: center}
     #customers {
         font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
         border-collapse: collapse;
@@ -132,11 +132,11 @@
                 <!--/.navbar-->
                 <br><br><br><br><p></p><br><br>
                 <!--footer-->
-                <h3>Add Records</h3>
+                <h2>Add Records</h2>
                 <br><br>
                 <p>
-                    <a href="/staffs" id="list">Back to Records list</a>
-                </p>
+                    <a href="/records" id="list">Back to Records list</a>
+                </p>   <br><br>
 <div class="notify">
     <th:block th:if="${message}">
         <p th:text="${message}"></p>
@@ -169,7 +169,7 @@
         <input type="submit" value="Save">
     </form>
 </div>
-<footer th:replace="mylayout :: footer"></footer>
+<footer ></footer>
 </body>
 </html>
 <!--<!DOCTYPE html>-->

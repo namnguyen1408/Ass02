@@ -89,7 +89,7 @@ public class ApplicationConfig implements WebMvcConfigurer {
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/quanly_nv");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/quanly_nv1");
         dataSource.setUsername("root");
         dataSource.setPassword("123456789");
         return dataSource;
